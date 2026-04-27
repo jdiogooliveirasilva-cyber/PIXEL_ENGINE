@@ -469,16 +469,14 @@ const Engine = (function(){
       this.joinEvents = [];       // playerIds que entraram nesse frame
       this.leaveEvents = [];      // playerIds que saíram nesse frame
     }
-    // Conecta ao mesmo host/porta do HTML (Replit-friendly).
-    // Se rodar sem servidor (ex.: file://), simplesmente falha em silêncio
+    // Conecta ao servidor multiplayer hospedado no Render.
+    // Se o servidor estiver fora do ar, simplesmente falha em silêncio
     // e a engine continua offline.
     connect(){
       if(this.connected || this.connecting) return;
       if(typeof WebSocket === "undefined") return;
-      if(typeof location === "undefined" || !location.host) return;
       try {
-        const protocol = location.protocol === "https:" ? "wss://" : "ws://";
-        const url = protocol + location.host;
+        const url = "wss://pixel-engine-sa0w.onrender.com/";
         this.connecting = true;
         const sock = new WebSocket(url);
         this.socket = sock;
