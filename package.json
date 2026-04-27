@@ -1,0 +1,16 @@
+{
+  "name": "pixel-engine-multiplayer",
+  "version": "6.3.0",
+  "description": "Pixel Engine 2D + servidor multiplayer (WebSocket + salas).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev":   "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
