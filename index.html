@@ -476,7 +476,7 @@ const Engine = (function(){
       if(this.connected || this.connecting) return;
       if(typeof WebSocket === "undefined") return;
       try {
-        const url = "wss://pixel-engine-sa0w.onrender.com/";
+        const url = "wss://pixel-engine-sa0w.onrender.com";
         this.connecting = true;
         const sock = new WebSocket(url);
         this.socket = sock;
